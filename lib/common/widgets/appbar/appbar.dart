@@ -1,7 +1,8 @@
+import 'package:ecommerce_hptshop/utils/constants/colors.dart';
 import 'package:ecommerce_hptshop/utils/device/device_utility.dart';
+import 'package:ecommerce_hptshop/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../utils/constants/sizes.dart';
@@ -17,12 +18,13 @@ class HptAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = HptHelperFunctions.isDarkMode(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: HptSizes.md),
       child: AppBar(
         automaticallyImplyLeading: false,
         leading: showBackArrow
-            ? IconButton(onPressed: () => Get.back(), icon: const Icon(Iconsax.arrow_left))
+            ? IconButton(onPressed: () => Get.back(), icon: const Icon(Iconsax.arrow_left), color: dark ? HptColors.white : HptColors.dark)
             : lendingIcon != null
                 ? IconButton(onPressed: lendingOnPressed, icon: Icon(lendingIcon))
                 : null,

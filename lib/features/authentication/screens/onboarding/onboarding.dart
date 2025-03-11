@@ -1,10 +1,8 @@
-import 'package:ecommerce_hptshop/features/authentication/controllers/onboarding_controller.dart';
+import 'package:ecommerce_hptshop/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:ecommerce_hptshop/utils/constants/image_strings.dart';
 import 'package:ecommerce_hptshop/utils/constants/text_strings.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import '../widgets/OnBoardingDotNavigation.dart';
 import '../widgets/OnBoardingNextButton.dart';
 import '../widgets/onboarding_page.dart';

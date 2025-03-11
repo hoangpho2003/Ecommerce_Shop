@@ -14,20 +14,14 @@ class HptPrimaryHeaderContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return HptCurvedEdgeWidget(
-      child: SizedBox(
-        height: 400,
-        child: Container(
-          color: HptColors.primary,
-          padding: const EdgeInsets.only(bottom: 0),
-          child: Stack(
-            children: [
-              Positioned(
-                  top: -150, right: -250, child: TCircularContainer(backgroundColor: HptColors.textWhite.withOpacity(0.1))),
-              Positioned(
-                  top: 100, right: -300, child: TCircularContainer(backgroundColor: HptColors.textWhite.withOpacity(0.1))),
-              child,
-            ],
-          ),
+      child: Container(
+        color: HptColors.primary,
+        child: Stack(
+          children: [
+            Positioned(top: -150, right: -250, child: HptCircularContainer(backgroundColor: HptColors.textWhite.withOpacity(0.1))),
+            Positioned(top: 100, right: -300, child: HptCircularContainer(backgroundColor: HptColors.textWhite.withOpacity(0.1))),
+            child,
+          ],
         ),
       ),
     );

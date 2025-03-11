@@ -1,28 +1,35 @@
+import 'package:ecommerce_hptshop/features/shop/screens/Cart/cart.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-
 import '../../../../utils/constants/colors.dart';
+import '../../../../utils/helpers/helper_functions.dart';
 
 class HptCardCounterIcon extends StatelessWidget {
   const HptCardCounterIcon({
-    super.key, required this.onPressed, required this.iconColor,
+    super.key,
+    required this.onPressed,
+    this.iconColor,
+    this.counterBgColor,
+    this.counterTextColor,
   });
 
   final VoidCallback onPressed;
-  final Color iconColor;
+  final Color? iconColor, counterBgColor, counterTextColor;
 
   @override
   Widget build(BuildContext context) {
+    final dark = HptHelperFunctions.isDarkMode(context);
     return Stack(
       children: [
-        IconButton(onPressed: onPressed, icon: const Icon(Iconsax.shopping_bag, color: HptColors.white)),
+        IconButton(onPressed: ()=> Get.to(() => const CartScreen()), icon: Icon(Iconsax.shopping_bag, color: iconColor)),
         Positioned(
           right: 0,
           child: Container(
             width: 18,
             height: 18,
             decoration: BoxDecoration(
-              color: Colors.black,
+              color: counterBgColor ?? (dark ? HptColors.white : HptColors.black),
               borderRadius: BorderRadius.circular(100),
             ),
             child: Center(

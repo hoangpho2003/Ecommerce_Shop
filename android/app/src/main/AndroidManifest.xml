@@ -1,4 +1,21 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Quyền truy cập máy ảnh -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false"
+        tools:targetApi="eclair" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Quyền đọc bộ nhớ ngoài -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!-- Quyền ghi bộ nhớ ngoài (tùy chọn, không cần thiết từ Android 10 trở lên) -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- Quyền truy cập Internet -->
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:label="ecommerce_hptshop"
         android:name="${applicationName}"

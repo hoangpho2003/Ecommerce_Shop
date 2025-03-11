@@ -15,6 +15,12 @@ class HptValidator {
     return null;
   }
 
+  static String? validateEmptyText(String? fieldName, String? value){
+    if(value == null || value.isEmpty){
+      return '$fieldName is required.';
+    }
+  }
+
   static String? validatePassword(String? value) {
     if (value == null || value.isEmpty) {
       return 'Password is required.';
